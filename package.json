@@ -10,6 +10,6 @@
     "@types/node": "^20.10.5"
   },
   "scripts": {
-    "test": "npx playwright test --project=chromium --workers=5"
+    "test": "npx playwright test --project=chromium"
   }
 }

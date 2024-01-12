@@ -6,9 +6,9 @@ const mqtt = require('mqtt');
 export async function validateMQTTtopic(topic, deviceId, expectedData, maxAttempts = 10) {
     return new Promise((resolve, reject) => {
         // Connect to the MQTT broker with specified credentials
-        const client = mqtt.connect('mqtt://a986a8ac6f4f2495db28785afac510f7-1820766239.us-east-2.elb.amazonaws.com:1883', {
-            username: 'merck',
-            password: 'merck@123',
+        const client = mqtt.connect('mqtt://******:1883', {
+            username: '****',
+            password: '****',
         });
 
         // Event handler for successful connection
