@@ -1,5 +1,5 @@
 export const expectedData1 = {
-    "request": {
+    "deviceinfo": {
         "device_id": 5,
         "data_available": true,
         "connection_status": "connected",

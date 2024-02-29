@@ -23,7 +23,7 @@ export async function validateMQTTtopic(topic, deviceId, expectedData, maxAttemp
             const receivedData = JSON.parse(receivedDataString);
 
             // Check if the received message is for the specified device ID
-            if (receivedData.request.device_id === deviceId) {
+            if (receivedData.deviceinfo.device_id === deviceId) {
                 // Remove currenttime field, log received data, and compare with expected data
                 delete receivedData.deviceinfo?.currenttime;
                 console.log(receivedData);
@@ -36,7 +36,7 @@ export async function validateMQTTtopic(topic, deviceId, expectedData, maxAttemp
                     client.end(); // Always close the MQTT connection
                 }
             } else {
-                console.warn(`Received heartbeat for a different deviceid ${receivedData.request.device_id}`);
+                console.warn(`Received heartbeat for a different deviceid ${receivedData.deviceinfo.device_id}`);
             }
         });
 
